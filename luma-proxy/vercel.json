@@ -1,9 +1,0 @@
-{
-  "version": 2,
-  "builds": [
-    { "src": "api/luma-proxy.js", "use": "@vercel/node" }
-  ],
-  "routes": [
-    { "src": "/api/luma-proxy", "dest": "api/luma-proxy.js" }
-  ]
-}
