@@ -1,10 +1,9 @@
-export default async function handler(req, res) {
+module.exports = async function (req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
   try {
-    // Forward request to Luma's working endpoint
     const response = await fetch("https://webapp.engineeringlumalabs.com/api/v1/generations", {
       method: "POST",
       headers: {
@@ -21,4 +20,4 @@ export default async function handler(req, res) {
     console.error("Proxy error:", error);
     return res.status(500).json({ error: error.message });
   }
-}
+};
